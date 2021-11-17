@@ -1,0 +1,18 @@
+﻿<Page x:Class="Avocado.pNavigation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Avocado"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="pNavigation">
+
+    <Grid Background="White">
+        <StackPanel VerticalAlignment="Center">
+            <Button Width="200" Height="40" FontSize="17" Background="#FF9BD2FF" Margin="5" Click="Button_Click">Список квартир</Button>
+            <Button Width="200" Height="40" FontSize="17" Background="#FF9BD2FF" Margin="5" Click="Button_Click_1">Список ЖК</Button>
+            <Button Width="200" Height="40" FontSize="17" Background="#FF9BD2FF" Margin="5" Click="Button_Click_2">Жилищный комплекс</Button>
+        </StackPanel>
+    </Grid>
+</Page>
