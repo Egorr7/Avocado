@@ -23,6 +23,12 @@ namespace Avocado
         public pHouseComplexList()
         {
             InitializeComponent();
+            DGridApartament.ItemsSource = AvocadoEntities.GetContext().ResidentialComplexes.ToList();
+        }
+
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
