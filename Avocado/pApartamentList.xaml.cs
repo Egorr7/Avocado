@@ -39,7 +39,23 @@ namespace Avocado
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-            
+            var apartamentsForRemove = DGridApartament.SelectedItems.Cast<Apartament>().ToList();
+
+            if (MessageBox.Show($"Вы уверены, что хотите удалить следующие {apartamentsForRemove.Count()} данные ?", "Внимание!!",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    AvocadoEntities.GetContext().Apartaments.RemoveRange(apartamentsForRemove);
+                    AvocadoEntities.GetContext().SaveChanges();
+
+                    DGridApartament.ItemsSource = AvocadoEntities.GetContext().Apartaments.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
