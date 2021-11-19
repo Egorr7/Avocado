@@ -73,3 +73,6 @@ C:\HousesComplex\Avocado\obj\Debug\Avocado_Content.g.cs
 C:\HousesComplex\Avocado\obj\Debug\Avocado.csproj.CopyComplete
 C:\HousesComplex\Avocado\obj\Debug\pHouses.g.cs
 C:\HousesComplex\Avocado\obj\Debug\pHouses.baml
+C:\HousesComplex\Avocado\obj\Debug\Avocado.csprojAssemblyReference.cache
+C:\HousesComplex\Avocado\obj\Debug\pAddApartaments.g.cs
+C:\HousesComplex\Avocado\obj\Debug\pAddApartaments.baml

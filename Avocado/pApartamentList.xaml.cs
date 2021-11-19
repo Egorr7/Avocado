@@ -29,7 +29,26 @@ namespace Avocado
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
+            Manager.MainFrame.Navigate(new pAddApartaments((sender as Button).DataContext as Apartament));
+        }
 
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new pAddApartaments(null));
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if(Visibility == Visibility.Visible)
+            {
+                AvocadoEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                DGridApartament.ItemsSource = AvocadoEntities.GetContext().Apartaments.ToList();
+            }
         }
     }
 }
