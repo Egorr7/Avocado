@@ -16,19 +16,14 @@ using System.Windows.Shapes;
 namespace Avocado
 {
     /// <summary>
-    /// Логика взаимодействия для pHouseComplex.xaml
+    /// Логика взаимодействия для pHouses.xaml
     /// </summary>
-    public partial class pHouseComplex : Page
+    public partial class pHouses : Page
     {
-        public pHouseComplex()
+        public pHouses()
         {
             InitializeComponent();
             DGridApartament.ItemsSource = AvocadoEntities.GetContext().ResidentialComplexes.ToList();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)

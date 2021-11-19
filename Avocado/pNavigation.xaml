@@ -11,8 +11,8 @@
     <Grid Background="White">
         <StackPanel VerticalAlignment="Center">
             <Button Width="200" Height="40" FontSize="17" Background="#FF9BD2FF" Margin="5" Click="Button_Click">Список квартир</Button>
-            <Button Width="200" Height="40" FontSize="17" Background="#FF9BD2FF" Margin="5" Click="Button_Click_1">Список ЖК</Button>
-            <Button Width="200" Height="40" FontSize="17" Background="#FF9BD2FF" Margin="5" Click="Button_Click_2">Жилищный комплекс</Button>
+            <Button Width="200" Height="40" FontSize="17" Background="#FF9BD2FF" Margin="5" Click="Button_Click_1">Список домов</Button>
+            <Button Width="200" Height="40" FontSize="17" Background="#FF9BD2FF" Margin="5" Click="Button_Click_2">Интерфейс ЖК</Button>
         </StackPanel>
     </Grid>
 </Page>

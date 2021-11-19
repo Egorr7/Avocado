@@ -76,6 +76,9 @@
     <Compile Include="House.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="pHouses.xaml.cs">
+      <DependentUpon>pHouses.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ResidentialComplex.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
@@ -108,7 +111,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="pHouseComplex.xaml">
+    <Page Include="pHouses.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,9 +128,6 @@
     <Compile Include="Manager.cs" />
     <Compile Include="pApartamentList.xaml.cs">
       <DependentUpon>pApartamentList.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="pHouseComplex.xaml.cs">
-      <DependentUpon>pHouseComplex.xaml</DependentUpon>
     </Compile>
     <Compile Include="pHouseComplexList.xaml.cs">
       <DependentUpon>pHouseComplexList.xaml</DependentUpon>

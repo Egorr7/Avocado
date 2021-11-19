@@ -1,0 +1,15 @@
+Вставить в BaseModel.Context.cs
+//контекст
+        private static AvocadoEntities _context;
+        public AvocadoEntities()
+            : base("name=AvocadoEntities")
+        {
+        }
+        //получение экземпляра контекста
+        public static AvocadoEntities GetContext()
+        {
+            if (_context == null)
+                _context = new AvocadoEntities();
+
+            return _context;
+        }

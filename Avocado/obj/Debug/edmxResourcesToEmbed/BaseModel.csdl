@@ -43,6 +43,7 @@
     <Property Name="ComplexValueAdded" Type="Int32" />
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Houses" Relationship="Self.FK_House_ResidentialComplex" FromRole="ResidentialComplex" ToRole="House" />
+    <Property Name="CountHouses" Type="Int32" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>

@@ -1,6 +1,94 @@
-USE [��� ��]
+USE [master]
 GO
-/****** Object:  Table [dbo].[Apartaments]    Script Date: 18.11.2021 0:15:28 ******/
+/****** Object:  Database [Avocado]    Script Date: 19.11.2021 14:13:23 ******/
+CREATE DATABASE [Avocado]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'Avocado', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\Avocado.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'Avocado_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\Avocado_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [Avocado] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [Avocado].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [Avocado] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [Avocado] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [Avocado] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [Avocado] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [Avocado] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [Avocado] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [Avocado] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [Avocado] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [Avocado] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [Avocado] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [Avocado] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [Avocado] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [Avocado] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [Avocado] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [Avocado] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [Avocado] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [Avocado] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [Avocado] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [Avocado] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [Avocado] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [Avocado] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [Avocado] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [Avocado] SET RECOVERY FULL 
+GO
+ALTER DATABASE [Avocado] SET  MULTI_USER 
+GO
+ALTER DATABASE [Avocado] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [Avocado] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [Avocado] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [Avocado] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [Avocado] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [Avocado] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'Avocado', N'ON'
+GO
+ALTER DATABASE [Avocado] SET QUERY_STORE = OFF
+GO
+USE [Avocado]
+GO
+/****** Object:  User [user]    Script Date: 19.11.2021 14:13:23 ******/
+CREATE USER [user] WITHOUT LOGIN WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [lilvova]    Script Date: 19.11.2021 14:13:23 ******/
+CREATE USER [lilvova] FOR LOGIN [lilvova] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  Table [dbo].[Apartaments]    Script Date: 19.11.2021 14:13:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -22,6 +110,45 @@ CREATE TABLE [dbo].[Apartaments](
 	[ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[House]    Script Date: 19.11.2021 14:13:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[House](
+	[ID] [int] NOT NULL,
+	[ResidentialComplexID] [int] NOT NULL,
+	[Street] [nvarchar](max) NOT NULL,
+	[Number] [nvarchar](max) NULL,
+	[BuildingCost] [money] NOT NULL,
+	[HouseValueAdded] [int] NOT NULL,
+	[IsDeleted] [bit] NOT NULL,
+ CONSTRAINT [PK_House] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ResidentialComplex]    Script Date: 19.11.2021 14:13:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ResidentialComplex](
+	[ID] [int] NOT NULL,
+	[Name] [nvarchar](max) NOT NULL,
+	[City] [nvarchar](max) NOT NULL,
+	[Status] [nvarchar](max) NOT NULL,
+	[BuildingCost] [money] NOT NULL,
+	[CountHouses] [int] NULL,
+	[ComplexValueAdded] [int] NULL,
+	[IsDeleted] [bit] NOT NULL,
+ CONSTRAINT [PK_ResidentialComplex] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 INSERT [dbo].[Apartaments] ([ID], [HouseID], [Number], [Area], [CountOfRooms], [Section], [Floor], [IsSold], [BuildingCost], [ApartmentValueAdded], [IsDeleted]) VALUES (457, 1, 1, 67.6, 2, 1, 1, 1, 11882000.0000, 300000, 0)
 GO
@@ -109,8 +236,37 @@ INSERT [dbo].[Apartaments] ([ID], [HouseID], [Number], [Area], [CountOfRooms], [
 GO
 INSERT [dbo].[Apartaments] ([ID], [HouseID], [Number], [Area], [CountOfRooms], [Section], [Floor], [IsSold], [BuildingCost], [ApartmentValueAdded], [IsDeleted]) VALUES (3407, 11, 93, 63.3, 2, 3, 6, 0, 7453000.0000, 450000, 0)
 GO
+INSERT [dbo].[House] ([ID], [ResidentialComplexID], [Street], [Number], [BuildingCost], [HouseValueAdded], [IsDeleted]) VALUES (1, 1, N'Амурская', N'Г8', 400000.0000, 500000, 0)
+GO
+INSERT [dbo].[House] ([ID], [ResidentialComplexID], [Street], [Number], [BuildingCost], [HouseValueAdded], [IsDeleted]) VALUES (3, 1, N'Амурская', N'Г7', 500000.0000, 550000, 0)
+GO
+INSERT [dbo].[House] ([ID], [ResidentialComplexID], [Street], [Number], [BuildingCost], [HouseValueAdded], [IsDeleted]) VALUES (5, 1, N'Амурская', N'А2', 700000.0000, 850000, 0)
+GO
+INSERT [dbo].[House] ([ID], [ResidentialComplexID], [Street], [Number], [BuildingCost], [HouseValueAdded], [IsDeleted]) VALUES (6, 1, N'Амурская', N'А1', 700000.0000, 850000, 0)
+GO
+INSERT [dbo].[House] ([ID], [ResidentialComplexID], [Street], [Number], [BuildingCost], [HouseValueAdded], [IsDeleted]) VALUES (8, 1, N'Амурская', N'Б3', 450000.0000, 550000, 0)
+GO
+INSERT [dbo].[House] ([ID], [ResidentialComplexID], [Street], [Number], [BuildingCost], [HouseValueAdded], [IsDeleted]) VALUES (9, 1, N'Амурская', N'Б4', 450000.0000, 550000, 0)
+GO
+INSERT [dbo].[House] ([ID], [ResidentialComplexID], [Street], [Number], [BuildingCost], [HouseValueAdded], [IsDeleted]) VALUES (10, 2, N'Калужское шоссе', NULL, 650000.0000, 700000, 0)
+GO
+INSERT [dbo].[House] ([ID], [ResidentialComplexID], [Street], [Number], [BuildingCost], [HouseValueAdded], [IsDeleted]) VALUES (11, 2, N'Калужское шоссе', NULL, 450000.0000, 500000, 0)
+GO
+INSERT [dbo].[ResidentialComplex] ([ID], [Name], [City], [Status], [BuildingCost], [CountHouses], [ComplexValueAdded], [IsDeleted]) VALUES (1, N'ЖК «Амурский»', N'Москва', N'строительство', 500000.0000, 6, 60000, 0)
+GO
+INSERT [dbo].[ResidentialComplex] ([ID], [Name], [City], [Status], [BuildingCost], [CountHouses], [ComplexValueAdded], [IsDeleted]) VALUES (2, N'ЖК «Испанские кварталы»', N'Москва', N'план', 7000000.0000, 2, 950000, 0)
+GO
 ALTER TABLE [dbo].[Apartaments]  WITH CHECK ADD  CONSTRAINT [FK_Apartaments_House] FOREIGN KEY([HouseID])
 REFERENCES [dbo].[House] ([ID])
 GO
 ALTER TABLE [dbo].[Apartaments] CHECK CONSTRAINT [FK_Apartaments_House]
+GO
+ALTER TABLE [dbo].[House]  WITH CHECK ADD  CONSTRAINT [FK_House_ResidentialComplex] FOREIGN KEY([ResidentialComplexID])
+REFERENCES [dbo].[ResidentialComplex] ([ID])
+GO
+ALTER TABLE [dbo].[House] CHECK CONSTRAINT [FK_House_ResidentialComplex]
+GO
+USE [master]
+GO
+ALTER DATABASE [Avocado] SET  READ_WRITE 
 GO

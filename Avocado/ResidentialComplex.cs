@@ -27,6 +27,7 @@ namespace Avocado
         public decimal BuildingCost { get; set; }
         public Nullable<int> ComplexValueAdded { get; set; }
         public bool IsDeleted { get; set; }
+        public Nullable<int> CountHouses { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<House> Houses { get; set; }

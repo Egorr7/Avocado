@@ -33,12 +33,12 @@ namespace Avocado
         //список жк
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new pHouseComplexList());
+            Manager.MainFrame.Navigate(new pHouses());
         }
         //интерфейс жк
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new pHouseComplex());
+            Manager.MainFrame.Navigate(new pHouseComplexList());
         }
     }
 }

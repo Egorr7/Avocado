@@ -37,6 +37,7 @@
     <Property Name="City" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BuildingCost" Type="money" Nullable="false" />
+    <Property Name="CountHouses" Type="int" />
     <Property Name="ComplexValueAdded" Type="int" />
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
   </EntityType>
