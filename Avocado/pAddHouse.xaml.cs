@@ -20,14 +20,41 @@ namespace Avocado
     /// </summary>
     public partial class pAddHouse : Page
     {
-        public pAddHouse()
+        private House _currentHouse = new House();
+        public pAddHouse(House selectedHouse)
         {
             InitializeComponent();
+            if (selectedHouse != null)
+                _currentHouse = selectedHouse;
+
+            DataContext = _currentHouse;
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
+            StringBuilder errors = new StringBuilder();
 
+            if (string.IsNullOrWhiteSpace(_currentHouse.BuildingCost.ToString()))
+                errors.AppendLine("Укажите адрес");
+
+            if (errors.Length > 0)
+            {
+                MessageBox.Show(errors.ToString());
+                return;
+            }
+
+            if (_currentHouse.ID == 0)
+                AvocadoEntities.GetContext().Houses.Add(_currentHouse);
+
+            try
+            {
+                AvocadoEntities.GetContext().SaveChanges();
+                MessageBox.Show("Информация сохранена!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

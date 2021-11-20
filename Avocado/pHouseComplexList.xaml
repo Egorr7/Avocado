@@ -17,6 +17,7 @@
             <DataGrid.Columns>
                 <!--<DataGridTextColumn Header="Название ЖК" Binding="{Binding ResidentialComplex.Name}"  Width="*"></DataGridTextColumn>-->
                 <DataGridTextColumn Header="Название ЖК" Binding="{Binding Name}"  Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Коэф. добавочной стоимости" Binding="{Binding House.HouseValueAdded}"  Width="180"></DataGridTextColumn>
                 <DataGridTextColumn Header="Статус" Binding="{Binding Status}"  Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Кол-во домов" Binding="{Binding CountHouses}"  Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Город" Binding="{Binding City}"  Width="*"></DataGridTextColumn>
