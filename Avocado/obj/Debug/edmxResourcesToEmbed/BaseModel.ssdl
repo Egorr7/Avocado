@@ -27,6 +27,8 @@
     <Property Name="BuildingCost" Type="money" Nullable="false" />
     <Property Name="HouseValueAdded" Type="int" Nullable="false" />
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="HouseForSale" Type="int" />
+    <Property Name="HouseSold" Type="int" />
   </EntityType>
   <EntityType Name="ResidentialComplex">
     <Key>

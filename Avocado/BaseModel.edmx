@@ -32,6 +32,8 @@
           <Property Name="BuildingCost" Type="money" Nullable="false" />
           <Property Name="HouseValueAdded" Type="int" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="HouseForSale" Type="int" />
+          <Property Name="HouseSold" Type="int" />
         </EntityType>
         <EntityType Name="ResidentialComplex">
           <Key>
@@ -128,6 +130,8 @@
           <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Apartaments" Relationship="Self.FK_Apartaments_House" FromRole="House" ToRole="Apartaments" />
           <NavigationProperty Name="ResidentialComplex" Relationship="Self.FK_House_ResidentialComplex" FromRole="House" ToRole="ResidentialComplex" />
+          <Property Name="HouseForSale" Type="Int32" />
+          <Property Name="HouseSold" Type="Int32" />
         </EntityType>
         <EntityType Name="ResidentialComplex">
           <Key>
@@ -217,6 +221,8 @@
           <EntitySetMapping Name="Houses">
             <EntityTypeMapping TypeName="AvocadoModel.House">
               <MappingFragment StoreEntitySet="House">
+                <ScalarProperty Name="HouseSold" ColumnName="HouseSold" />
+                <ScalarProperty Name="HouseForSale" ColumnName="HouseForSale" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ResidentialComplexID" ColumnName="ResidentialComplexID" />
                 <ScalarProperty Name="Street" ColumnName="Street" />

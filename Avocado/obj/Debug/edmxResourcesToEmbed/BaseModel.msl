@@ -21,6 +21,8 @@
     <EntitySetMapping Name="Houses">
       <EntityTypeMapping TypeName="AvocadoModel.House">
         <MappingFragment StoreEntitySet="House">
+          <ScalarProperty Name="HouseSold" ColumnName="HouseSold" />
+          <ScalarProperty Name="HouseForSale" ColumnName="HouseForSale" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="ResidentialComplexID" ColumnName="ResidentialComplexID" />
           <ScalarProperty Name="Street" ColumnName="Street" />

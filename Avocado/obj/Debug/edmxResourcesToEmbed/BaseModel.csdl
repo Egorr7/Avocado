@@ -30,6 +30,8 @@
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Apartaments" Relationship="Self.FK_Apartaments_House" FromRole="House" ToRole="Apartaments" />
     <NavigationProperty Name="ResidentialComplex" Relationship="Self.FK_House_ResidentialComplex" FromRole="House" ToRole="ResidentialComplex" />
+    <Property Name="HouseForSale" Type="Int32" />
+    <Property Name="HouseSold" Type="Int32" />
   </EntityType>
   <EntityType Name="ResidentialComplex">
     <Key>
