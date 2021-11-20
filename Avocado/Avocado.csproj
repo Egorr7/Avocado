@@ -79,6 +79,12 @@
     <Compile Include="pAddApartaments.xaml.cs">
       <DependentUpon>pAddApartaments.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pAddHouse.xaml.cs">
+      <DependentUpon>pAddHouse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pAddHouseComplex.xaml.cs">
+      <DependentUpon>pAddHouseComplex.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pHouses.xaml.cs">
       <DependentUpon>pHouses.xaml</DependentUpon>
     </Compile>
@@ -111,6 +117,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="pAddApartaments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pAddHouse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pAddHouseComplex.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

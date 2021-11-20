@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\HousesComplex\Avocado\obj\Debug\
+C:\HousesComplex\Avocado\Avocado\obj\Debug\
 Avocado
 none
 false
 DEBUG;TRACE
-C:\HousesComplex\Avocado\App.xaml
-6937331157
+C:\HousesComplex\Avocado\Avocado\App.xaml
+81946665031
 2-967514586
-18149744288
-19361545410
-MainWindow.xaml;pAddApartaments.xaml;pApartamentList.xaml;pHouses.xaml;pHouseComplexList.xaml;pNavigation.xaml;
+201382719674
+19-931734175
+MainWindow.xaml;pAddApartaments.xaml;pAddHouse.xaml;pAddHouseComplex.xaml;pApartamentList.xaml;pHouses.xaml;pHouseComplexList.xaml;pNavigation.xaml;
 
 False
 
