@@ -21,7 +21,8 @@
                 <DataGridTextColumn Header="Кол-во комнат" Binding="{Binding CountOfRooms}"  Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Секция" Binding="{Binding Section}"  Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Этаж" Binding="{Binding Floor}"  Width="*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Продана?" Binding="{Binding IsDeleted}"  Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Удалена" Binding="{Binding IsDeleted}"  Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Продана" Binding="{Binding IsSold}"  Width="*"></DataGridTextColumn>
                 <DataGridTemplateColumn Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
