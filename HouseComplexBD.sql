@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Avocado]    Script Date: 20.11.2021 22:39:12 ******/
+/****** Object:  Database [Avocado]    Script Date: 21.11.2021 21:07:23 ******/
 CREATE DATABASE [Avocado]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -82,13 +82,13 @@ ALTER DATABASE [Avocado] SET QUERY_STORE = OFF
 GO
 USE [Avocado]
 GO
-/****** Object:  User [user]    Script Date: 20.11.2021 22:39:13 ******/
+/****** Object:  User [user]    Script Date: 21.11.2021 21:07:23 ******/
 CREATE USER [user] WITHOUT LOGIN WITH DEFAULT_SCHEMA=[dbo]
 GO
-/****** Object:  User [lilvova]    Script Date: 20.11.2021 22:39:13 ******/
+/****** Object:  User [lilvova]    Script Date: 21.11.2021 21:07:23 ******/
 CREATE USER [lilvova] FOR LOGIN [lilvova] WITH DEFAULT_SCHEMA=[dbo]
 GO
-/****** Object:  Table [dbo].[Apartaments]    Script Date: 20.11.2021 22:39:13 ******/
+/****** Object:  Table [dbo].[Apartaments]    Script Date: 21.11.2021 21:07:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -111,7 +111,7 @@ CREATE TABLE [dbo].[Apartaments](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[House]    Script Date: 20.11.2021 22:39:13 ******/
+/****** Object:  Table [dbo].[House]    Script Date: 21.11.2021 21:07:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -132,7 +132,7 @@ CREATE TABLE [dbo].[House](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ResidentialComplex]    Script Date: 20.11.2021 22:39:13 ******/
+/****** Object:  Table [dbo].[ResidentialComplex]    Script Date: 21.11.2021 21:07:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
